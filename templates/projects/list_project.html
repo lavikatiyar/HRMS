@@ -1,0 +1,48 @@
+{% extends "header_admin.html" %} 
+{% block title %}Project{% endblock %} 
+
+{% block body %}
+  <div class="container"><br><br>
+    <div>
+      <div class="col-md-12 text-center"><h2>Project List</h2></div>
+    </div>
+    <div>
+      <table class="table">
+        <thead style ="background-color:blue; color:white;">
+          <th>ID</th>
+          <th>Project Name</th>
+          <th>Location</th>
+          <th>Client</th>
+          <th>Dept ID</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </thead>
+        <tbody>
+          {% for project in project_list %}
+          <tr>
+            <!--<td>{{ loop.index }}</td>-->
+            <td>{{ project.p_id }}</td>
+            <td>{{ project.p_name }}</td>
+            <td>{{ project.p_location }}</td>
+            <td>{{ project.p_client }}</td>
+            <td>{{ project.dept_id }}</td>
+            <td>{{ project.p_description }}</td>
+           
+            <td>       
+              <span style="font-size:24x;">
+                <a href= "/edit_project/{{project.p_id}}">update</a>
+              </span>
+              &nbsp
+              <span style = "font-size:24x;">
+                <a href= "/delete_project/{{project.p_id}}">delete</a>
+              </span>
+            </td>
+          </tr>
+          
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+{% endblock %}

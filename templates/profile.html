@@ -1,0 +1,27 @@
+{% extends "base.html" %} 
+{% block title %}View Profile{% endblock %} 
+{% block body %}
+
+<div id="mainwrap">
+    <img src="../../static/img/avatar.png" id="avatar">
+    <p id="cname">{{current_user.first_name}} {{current_user.last_name}}</p>
+    
+    <br>
+    <div> <span id="mail"><i class="fa fa-envelope"></i> Email : {{current_user.emp_email}}</span></div>
+    <br>
+    <div> <span id="roles"><i class="fa fa-vcard-o"></i> Gender : {{current_user.gender}}</span></div>
+    <br>
+    <div> <span id="roles"><i class="fa fa-vcard-o"></i> Phone : {{current_user.emp_phone}}</span></div>
+    <br>
+    <div> <span id="roles"><i class="fa fa-vcard-o"></i> Address : {{current_user.emp_address}}</span></div>
+    <br>
+    <div> <span id="roles"><i class="fa fa-vcard-o"></i> Department : {{dept.dept_name}}</span></div>
+    <br>
+    <div> <span id="roles"><i class="fa fa-vcard-o"></i> Project : {{project.p_name}}</span></div>
+    <br>
+    <div> <span id="roles"><i class="fa fa-vcard-o"></i> Client : {{project.p_client}}</span></div>
+    <br>
+    <div> <span id="roles"><i class="fa fa fa-dollar"></i> Salary : {{payroll.amount}}</span></div>
+    </div>
+
+{% endblock %}

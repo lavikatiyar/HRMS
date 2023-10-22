@@ -1,0 +1,34 @@
+{% extends "header_admin.html" %} 
+{% block title %}Update Department{% endblock %} 
+
+{% block body %}  
+<div class="container"><br><br>
+  <div>
+    <div class="col-md-12 text-center"><h2>Update Department</h2></div>
+  </div>
+    <form method="POST" action='/edit_department/{{department.dept_id}}' >
+      <table class="table">
+       
+        <tr>
+            <td>Department Name</td>
+            <td><input type="text" name="dept_name" class="form-control" value="{{ department.dept_name }}" required></td>
+          </tr>
+          <tr>
+            <td>Location</td>
+            <td><input type="text" name="dept_location" class="form-control" value="{{ department.dept_location }}" required></td>
+          </tr>
+          <tr>
+            <td>Description</td>
+            <td><input type="text" name="dept_description" class="form-control"value="{{ department.dept_description }}"></td>
+          </tr>
+          <tr>
+            <td colspan="2">
+              <input type="submit" name="submit" value="submit" class="btn btn-warning">
+            </td>
+          </tr>
+      </table>
+        
+    </form>
+  </div>
+
+{% endblock %}

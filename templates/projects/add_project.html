@@ -1,0 +1,48 @@
+{% extends "header_admin.html" %} 
+
+{% block title %} Add New Project {% endblock %}
+
+{% block body %}  
+  <div class="container"><br><br>
+    <div>
+      <div class="col-md-12 text-center"><h2>Add New Project</h2></div>
+    </div>
+    <form method="POST" action='/add_project' >
+      <table class="table">
+        <tr>
+          <td>Project Name</td>
+          <td><input type="text" name="p_name" class="form-control" required></td>
+        </tr>
+        <tr>
+          <td>Project Location</td>
+          <td><input type="text" name="p_location" class="form-control" required></td>
+        </tr>
+        <tr>
+            <td>Client</td>
+            <td><input type="text" name="p_client" class="form-control"required></td>
+        </tr>
+        <tr>
+            <td>Dept Id</td>
+            <td>
+              <select name="dept_id">
+              {% for each in dept_list %}
+                <option value="{{each[0]}}">{{each[1]}}</option>
+              {% endfor %}
+              </select>
+            </td>
+          </tr>
+        <tr>
+          <td>Description</td>
+          <td><input type="text" name="p_description" class="form-control"></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="submit" name="submit" value="submit" class="btn btn-warning">
+          </td>
+        </tr>
+      </table>
+        
+    </form>
+  </div>
+
+{% endblock %}

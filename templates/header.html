@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+{% block title %} base {% endblock %}
+
+{% block body %}
+  <nav class="navbar fixed-top navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="#">HRMS</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="/">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/add_employee">Add Employee</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/add_department">Add Department</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/add_project">Add Project</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/add_payroll">Add Payroll</a>
+        </li>
+       
+        <li class="nav-item">
+          <a class="nav-link" href="/payroll_list"> payroll List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/employee_list"> Employee List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/project_list"> Project List</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/department_list"> Department List</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Employees
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+            <a class="dropdown-item" href="/add_employee">Add Employee</a>
+            <a class="dropdown-item" href="/">Enrolled Employees</a>
+          </div>
+      </li>
+      </ul>
+    </div>
+  </nav>
+{% endblock %}

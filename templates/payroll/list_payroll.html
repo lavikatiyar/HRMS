@@ -1,0 +1,47 @@
+{% extends "header_admin.html" %} 
+{% block title %}Payroll{% endblock %} 
+
+{% block body %}
+
+  <div class="container"><br><br>
+    <div>
+      <div class="col-md-12 text-center"><h2>Payroll List</h2></div>
+    </div>
+    <div>
+      <table class="table">
+        <thead style ="background-color:blue; color:white;">
+          <th>ID</th>
+          <th>Month Name</th>
+          <th>Employee Id</th>
+          <th>Amount</th>
+          <th>Pay Date</th>
+          <th>Actions</th>
+        </thead>
+        <tbody>
+          {% for pay in payroll_list %}
+          <tr>
+            <!--<td>{{ loop.index }}</td>-->
+            <td>{{ pay.pay_id }}</td>
+            <td>{{ pay.pay_month }}</td>
+            <td>{{ pay.employee_id }}</td>
+            <td>{{ pay.amount }}</td>
+            <td>{{ pay.pay_date }}</td>
+
+            <td>       
+              <span style="font-size:24x;">
+                <a href= "/edit_payroll/{{pay.pay_id}}">update</a>
+              </span>
+              &nbsp
+              <span style = "font-size:24x;">
+                <a href= "/delete_payroll/{{pay.pay_id}}">delete</a>
+              </span>
+            </td>
+          </tr>
+          
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+{% endblock %}

@@ -1,0 +1,111 @@
+{% extends "header_admin.html" %} 
+
+{% block title %} Add New Employee {% endblock %}
+
+{% block body %}  
+  <div class="container"><br><br>
+    <div>
+      <div class="col-md-12 text-center"><h2>Add New Employee</h2></div>
+    </div>
+    <form method="POST" action='/add_employee' >
+      <table class="table">
+        <tr>
+          <td>First Name</td>
+          <td><input type="text" name="first_name" class="form-control" required></td>
+        </tr>
+        <tr>
+          <td>Middle Name</td>
+          <td><input type="text" name="middle_name" class="form-control" ></td>
+        </tr>
+        <tr>
+          <td>Last Name</td>
+          <td><input type="text" name="last_name" class="form-control" required></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><input type="email" name="emp_email" class="form-control" required></td>
+        </tr>
+        <tr>
+          <td>Phone</td>
+          <td><input type="tel" name="emp_phone" pattern="[0-9]{10}" required></td>
+        </tr>
+        <tr>
+        <!--<tr>
+          <td>Password</td>
+          <td><input type="password" name="password" class="form-control"></td>
+        </tr>-->
+        <tr>
+          <td>Date of Birth</td>
+          <td><input type="date" name="emp_dob" class="form-control" required></td>
+        </tr>
+        <tr>
+          <td>Gender</td>
+          <td>
+            <input type="radio" name="gender" value="female"> Female &nbsp;
+            <input type="radio" name="gender" value="male" checked="checked" > Male
+          </td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td><input type="text" name="emp_address" class="form-control" required></td>
+        </tr>
+        <tr>
+          <td>Manager Id</td>
+          <td><input type="text" name="emp_manager_id" class="form-control" required></td>
+        </tr>
+        <tr>
+          <td>Dept Id</td>
+          <!--<td><input type="text" name="dept_id" class="form-control"required></td>-->
+          <td>
+            <select name="dept_id">
+            {% for each in dept_list %}
+              <option value="{{each[0]}}">{{each[1]}}</option>
+            {% endfor %}
+            </select>
+          </td>
+        </tr>
+
+        <tr>
+          <td>Project ID</td>
+          <!--<td><input type="text" name="p_id" class="form-control"required></td>-->
+          <td>
+            <select name="p_id">
+            {% for each in projects_list %}
+              <option value="{{each[0]}}">{{each[1]}}</option>
+            {% endfor %}
+            </select>
+          </td>
+        </tr>
+        <!--<tr>
+          <td>Course Name</td>
+          <td>
+            <input type="checkbox" name="course_name" value="Database Design"> Database Design &nbsp;
+            <input type="checkbox" name="course_name" value="Full Stack Development"> Full Stack Development &nbsp;
+            <input type="checkbox" name="course_name" value="Data Science"> Data Science &nbsp;
+            <input type="checkbox" name="course_name" value="Artificial Intelligence"> Artificial Intelligence
+          </td>
+        </tr>
+        <tr>
+          <td>Country</td>
+          <td>
+            <select name="country" class="form-control">
+              <option value="India">India</option>
+              <option value="Australia">Australia</option>
+              <option value="USA">USA</option>
+              <option value="UK">UK</option>
+              <option value="Pakistan">Pakistan</option>
+              <option value="Bangladesh">Bangladesh</option>
+              <option value="Sri Lanka">Sri Lanka</option>
+          </td>
+        </tr>-->
+        <tr>
+          <td colspan="2">
+            <input type="submit" name="submit" value="submit" class="btn btn-warning">
+          </td>
+        </tr>
+      </table>
+        
+    </form>
+  </div>
+
+{% endblock %}

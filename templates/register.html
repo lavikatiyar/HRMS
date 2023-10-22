@@ -1,0 +1,37 @@
+{% extends "header_user.html" %} 
+{% block title %}Login{% endblock %} 
+{% block body %}
+<div class="content-section">
+    <div class="center">
+        <h1 class="text-center">Register your account</h1>
+        <br/> 
+        <div class="container" style="border-style: solid;width:100%;">
+            <form method="POST" action='/register' >
+                <table class="table">
+                    <tr>
+                        <td>User Name</td>
+                        <td><input type="text" name="username" class="form-control" required></td>
+                    </tr>
+                    <tr>
+                        <td>Employee ID</td>
+                        <td><input type="text" name="employee_id" class="form-control" required></td>
+                    </tr>
+                    <tr>
+                        <td>Name</td>
+                        <td><input type="text" name="Name" class="form-control" required></td>
+                    </tr>
+                    <tr>
+                        <td>Password</td>
+                        <td><input type="password" name="password" class="form-control" required></td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="submit" name="submit" value="submit" class="btn btn-warning">
+                        </td>
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

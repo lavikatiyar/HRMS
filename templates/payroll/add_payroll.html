@@ -1,0 +1,44 @@
+{% extends "header_admin.html" %} 
+
+{% block title %} Add New Payroll {% endblock %}
+
+{% block body %}  
+  <div class="container"><br><br>
+    <div>
+      <div class="col-md-12 text-center"><h2>Add New Payroll</h2></div>
+    </div>
+    <form method="POST" action='/add_payroll' >
+      <table class="table">
+        <tr>
+          <td>Month Name</td>
+          <td>
+            <select name="pay_month">
+            {% for each in months %}
+              <option value="{{each}}">{{each}}</option>
+            {% endfor %}
+            </select>
+          </td>
+        </tr>
+        <tr>
+          <td>Employee ID</td>
+          <td><input type="text" name="employee_id" class="form-control" required></td>
+        </tr>
+        <tr>
+          <td>Paydate</td>
+          <td><input type="date" name="pay_date" class="form-control" required></td>
+        </tr>
+        <tr>
+            <td>Amount</td>
+            <td><input type="number" name="amount" class="form-control" required></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="submit" name="submit" value="submit" class="btn btn-warning">
+          </td>
+        </tr>
+      </table>
+        
+    </form>
+  </div>
+
+{% endblock %}

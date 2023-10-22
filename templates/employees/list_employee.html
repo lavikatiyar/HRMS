@@ -1,0 +1,59 @@
+{% extends "header_admin.html" %} 
+
+{% block title %}Employees{% endblock %} 
+
+{% block body %}
+
+<div class="container">
+  <br><br>
+  <div>
+    <div class="col-md-12 text-center"><h2>Employee List</h2></div>
+  </div>
+  <div>
+    <table class="table">
+      <thead style ="background-color:blue; color:white;">
+              <th>ID</th>
+              <th>First Name</th>
+              <th>Middle Name</th>
+              <th>Last Name</th>
+              <th>Email</th>
+              <th>Gender</th>
+              <th>Phone No</th>
+              <th>Address</th>
+              <th>Date Of Birth</th>
+              <th>Dept ID</th>
+              <th>Manager ID</th>
+              <th>Project Id</th>
+              <th>Actions</th>
+            </thead>
+            <tbody>
+              {% for employee in employee_list %}
+              <tr>
+                <td>{{ employee.id }}</td>
+                <td>{{ employee.first_name }}</td>
+                <td>{{ employee.middle_name }}</td>
+                <td>{{ employee.last_name }}</td>
+                <td>{{ employee.emp_email }}</td>
+                <td>{{ employee.gender }}</td>
+                <td>{{ employee.emp_phone }}</td>
+                <td>{{ employee.emp_address }}</td>
+                <td>{{ employee.emp_dob }}</td>
+                <td>{{ employee.dept_id }}</td>
+                <td>{{ employee.emp_manager_id }}</td>
+                <td>{{ employee.p_id }}</td>
+                <td>       
+                  <span style="font-size:24x;">
+                    <a href= "/edit_employee/{{employee.id}}">update</a>
+                  </span>
+                  &nbsp
+                  <span style = "font-size:24x;">
+                    <a href= "/delete_employee/{{employee.id}}">delete</a>
+                  </span>
+                </td>
+              </tr>
+              {% endfor %}
+              </tbody>
+          </table>
+        </div>
+  </div>
+{% endblock %}

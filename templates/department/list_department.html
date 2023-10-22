@@ -1,0 +1,44 @@
+{% extends "header_admin.html" %} 
+{% block title %}Department{% endblock %} 
+
+{% block body %}
+  <div class="container"><br><br>
+    <div>
+      <div class="col-md-12 text-center"><h2>Department List</h2></div>
+    </div>
+    <div>
+      <table class="table">
+        <thead style ="background-color:blue; color:white;">
+          <th>ID</th>
+          <th>Department Name</th>
+          <th>Location</th>
+          <th>Description</th>
+          <th>Actions</th>
+        </thead>
+        <tbody>
+          {% for dept in department_list %}
+          <tr>
+            <!--<td>{{ loop.index }}</td>-->
+            <td>{{ dept.dept_id }}</td>
+            <td>{{ dept.dept_name }}</td>
+            <td>{{ dept.dept_location }}</td>
+            <td>{{ dept.dept_description }}</td>
+           
+            <td>       
+              <span style="font-size:24x;">
+                <a href= "/edit_department/{{dept.dept_id}}">update</a>
+              </span>
+              &nbsp
+              <span style = "font-size:24x;">
+                <a href= "/delete_department/{{dept.dept_id}}">delete</a>
+              </span>
+            </td>
+          </tr>
+          
+          {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+{% endblock %}

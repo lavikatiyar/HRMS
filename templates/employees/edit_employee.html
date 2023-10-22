@@ -1,0 +1,71 @@
+{% extends "header_admin.html" %} 
+{% block title %}Update Employee{% endblock %} 
+
+{% block body %}  
+<div class="container"><br><br>
+  <div>
+    <div class="col-md-12 text-center"><h2>Update Employee</h2></div>
+  </div>
+    <form method="POST" action='/edit_employee/{{ employee.id }}' >
+      <table class="table">
+        <tr>
+          <td>First Name</td> 
+          <td><input type="text" name="first_name" class="form-control" value="{{ employee.first_name }}"></td>
+        </tr>
+        <tr>
+          <td>Middle Name</td>
+          <td><input type="text" name="middle_name" class="form-control" value="{{ employee.middle_name }}"></td>
+        </tr>
+        <tr>
+          <td>Last Name</td>
+          <td><input type="text" name="last_name" class="form-control" value="{{ employee.last_name }}"></td>
+        </tr>
+        <tr>
+          <td>Email</td>
+          <td><input type="email" name="emp_email" class="form-control" value="{{ employee.emp_email }}"></td>
+        </tr>
+        <tr>
+          <td>Phone</td>
+          <td><input type="tel" name="emp_phone" pattern="[0-9]{10}" required value="{{ employee.emp_phone}}"></td>
+        </tr>
+        <tr>
+          <td>Date of Birth</td>
+          <td><input type="date" name="emp_dob" class="form-control" value="{{ employee.emp_dob}}"></td>
+        </tr>
+        <tr>
+          <td>Gender</td>
+          <td>
+            <input type="radio" name="gender" value="female" 
+              {% if employee.gender == 'female' %} 
+                checked 
+              {% endif %}> Female &nbsp;
+            <input type="radio" name="gender" value="male" {% if employee.gender == 'male' %} checked {% endif %}> Male
+          </td>
+        </tr>
+        <tr>
+          <td>Address</td>
+          <td><input type="text" name="emp_address" class="form-control" value="{{ employee.emp_address }}"></td>
+        </tr>
+        <tr>
+          <td>Manager Id</td>
+          <td><input type="text" name="emp_manager_id" class="form-control" value="{{ employee.emp_manager_id }}"></td>
+        </tr>
+        <tr>
+          <td>Dept Id</td>
+          <td><input type="text" name="dept_id" class="form-control" value="{{ employee.dept_id }}"></td>
+        </tr>
+        <tr>
+          <td>Permission</td>
+          <td><input type="text" name="p_id" class="form-control" value="{{ employee.p_id }}"></td>
+        </tr>
+        <tr>
+          <td colspan="2">
+            <input type="submit" name="submit" value="submit" class="btn btn-warning">
+          </td>
+        </tr>
+      </table>
+        
+    </form>
+  </div>
+
+{% endblock %}
